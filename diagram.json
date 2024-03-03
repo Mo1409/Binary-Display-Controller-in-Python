@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -102,
+      "left": -222,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    { "type": "wokwi-7segment", "id": "sevseg1", "top": -119.82, "left": -23.72, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": -91.6, "left": -390.5, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw2", "top": -187.6, "left": -188.9, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw3", "top": 33.2, "left": -390.5, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw4", "top": -34, "left": -390.5, "attrs": {} },
+    { "type": "wokwi-slide-switch", "id": "sw5", "top": -158.8, "left": -390.5, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "sevseg1:A", "esp:D2", "#8f4814", [ "v-8.76", "h-48", "v153.2" ] ],
+    [ "sevseg1:COM.1", "esp:3V3", "black", [ "h0", "v105.6" ] ],
+    [ "sevseg1:B", "esp:D4", "red", [ "h9.6", "v134.04" ] ],
+    [ "esp:D5", "sevseg1:C", "orange", [ "h0" ] ],
+    [ "sevseg1:D", "esp:D12", "gold", [ "v86.4", "h-105.6" ] ],
+    [ "sevseg1:E", "esp:D13", "green", [ "v0" ] ],
+    [ "sevseg1:F", "esp:D14", "blue", [ "h-19.2", "v134.04" ] ],
+    [ "sevseg1:G", "esp:D18", "purple", [ "v0.84", "h-28.8", "v94.9" ] ],
+    [ "sw2:3", "esp:VIN", "#8f4814", [ "h0.2", "v9.6", "h-53.8" ] ],
+    [ "sw2:2", "esp:D15", "purple", [ "v19.2", "h52.2" ] ],
+    [ "sw2:1", "esp:GND.2", "orange", [ "h-28.8", "v200.6" ] ],
+    [ "esp:D22", "sw3:2", "yellow", [ "h5.5", "v144.8", "h-259.3" ] ],
+    [ "sw3:3", "esp:VIN", "green", [ "h134.6", "v0", "h13.4" ] ],
+    [ "sw3:1", "esp:GND.2", "limegreen", [ "v19.2", "h138.2" ] ],
+    [ "esp:D21", "sw4:2", "gold", [ "h-100.1", "v48.7", "h-124.8" ] ],
+    [ "sw4:3", "esp:VIN", "red", [ "h19.4", "v48", "h99.8" ] ],
+    [ "sw4:1", "esp:GND.2", "black", [ "v19.2", "h138.2" ] ],
+    [ "sw5:2", "esp:D33", "green", [ "v9.6", "h144.1", "v94.9" ] ],
+    [ "sw5:1", "esp:GND.2", "magenta", [ "v19.2", "h144", "v144", "h23" ] ],
+    [ "sw5:3", "esp:VIN", "blue", [ "h115.4", "v181.3" ] ],
+    [ "sw1:2", "esp:D19", "white", [ "h0.1", "v19.2", "h253.7" ] ],
+    [ "sw1:3", "esp:VIN", "purple", [ "v9.6", "h144.2" ] ],
+    [ "sw1:1", "esp:GND.2", "gray", [ "h124.8", "v104.6" ] ]
+  ],
+  "dependencies": {}
+}
